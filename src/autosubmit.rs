@@ -120,6 +120,7 @@ where
     F: FnMut(i8, i8, &'a str) -> ValidationResult,
 {
     if let Some(result) = check_submission_log(day, level, answer) {
+        debug!("answer provided by submission log in results.toml");
         return result;
     }
     if answer.is_empty() || answer == "0" {
