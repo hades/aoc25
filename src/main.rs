@@ -3,6 +3,7 @@ mod autosubmit;
 mod day01;
 mod day02;
 mod day03;
+mod day04;
 mod solver;
 
 use std::{
@@ -36,6 +37,7 @@ fn solver_for_day(day: i8) -> Option<Box<dyn Solver>> {
         1 => Some(Box::new(day01::solver())),
         2 => Some(Box::new(day02::solver())),
         3 => Some(Box::new(day03::solver())),
+        4 => Some(Box::new(day04::solver())),
         _ => None,
     }
 }
