@@ -61,7 +61,13 @@ impl Solver for Day6Solver {
         for column_idx in (0..width).rev() {
             let digits = data[0..(height - 1)]
                 .iter()
-                .map(|l| l[column_idx])
+                .filter_map(|l| {
+                    if l.len() > column_idx {
+                        Some(l[column_idx])
+                    } else {
+                        None
+                    }
+                })
                 .collect::<Vec<_>>();
             if digits.iter().all(|d| *d == ' ') && data[height - 1][column_idx] == ' ' {
                 assert!(operands.is_empty());
