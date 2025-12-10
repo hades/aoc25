@@ -15,6 +15,7 @@ regex = "1.12.2"
 reqwest = { version = "0.12.24", features = ["blocking", "cookies"] }
 serde = "1.0.228"
 toml = "0.9.8"
+z3 = "0.19.5"
 
 [dev-dependencies]
 httptest = "0.16.3"
