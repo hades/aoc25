@@ -71,7 +71,7 @@ fn solve_joltage_z3(joltage: &[usize], buttons: &[usize]) -> i64 {
     for j in 0..joltage.len() {
         solver.assert(&joltage_vars[j].eq(Int::from_i64(joltage[j] as i64)));
     }
-    let sum = button_vars.into_iter().reduce(|a, b| (a + b)).unwrap();
+    let sum = button_vars.into_iter().reduce(|a, b| a + b).unwrap();
     solver.minimize(&sum);
     match solver.check(&[]) {
         z3::SatResult::Sat => solver
