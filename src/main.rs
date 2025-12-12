@@ -11,6 +11,7 @@ mod day08;
 mod day09;
 mod day10;
 mod day11;
+mod day12;
 mod solver;
 
 use std::{
@@ -52,6 +53,7 @@ fn solver_for_day(day: i8) -> Option<Box<dyn Solver>> {
         9 => Some(Box::new(day09::solver())),
         10 => Some(Box::new(day10::solver())),
         11 => Some(Box::new(day11::solver())),
+        12 => Some(Box::new(day12::solver())),
         _ => None,
     }
 }
